@@ -1,0 +1,72 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fffaf2;
+}
+
+.custom-navbar {
+  background: #6b1d1d;
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: white !important;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.card {
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-warning {
+  border-radius: 25px;
+}
+
+.btn-primary {
+  border-radius: 25px;
+}
+.auth-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  width: 400px;
+  padding: 35px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.auth-card h2 {
+  text-align: center;
+  color: #6b1d1d;
+  margin-bottom: 10px;
+}
+
+.auth-card p {
+  text-align: center;
+  color: gray;
+}
+
+.auth-card input {
+  height: 45px;
+}
+.footer {
+  background: #6b1d1d;
+  color: white;
+  padding: 25px 0;
+}
+
+.footer h5 {
+  color: #ffc107;
+}
