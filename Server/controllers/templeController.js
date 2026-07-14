@@ -1,9 +1,10 @@
+import mongoose from "mongoose";
 import Temple from "../models/Temple.js";
 
 // Create Temple
 export const createTemple = async (req, res) => {
   try {
-    console.log(req.body); // <-- Add this line
+    console.log(req.body);
 
     const temple = await Temple.create(req.body);
 
@@ -40,8 +41,6 @@ export const getTemples = async (req, res) => {
 };
 
 // Get Single Temple
-import mongoose from "mongoose";
-
 export const getTemple = async (req, res) => {
   try {
     console.log("ID received:", req.params.id);

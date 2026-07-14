@@ -10,10 +10,10 @@ function Home() {
   useEffect(() => {
     const fetchTemples = async () => {
       try {
-        const data = await getAllTemples();
-        setTemples(data.data);
+        const response = await getAllTemples();
+        setTemples(response.data || []);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching temples:", error);
       }
     };
 
@@ -28,7 +28,6 @@ function Home() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="container text-center">
           <h1>Book Temple Darshan Online</h1>
@@ -54,42 +53,35 @@ function Home() {
         </div>
       </section>
 
-      {/* Popular Temples */}
       <section id="temples" className="container py-5">
-
         <div className="text-center mb-5">
-
-          <h2 className="fw-bold">
-            Popular Temples
-          </h2>
+          <h2 className="fw-bold">Popular Temples</h2>
 
           <p className="text-muted">
             Explore India's famous temples.
           </p>
-
         </div>
 
         <div className="row">
-
-          {filteredTemples.map((temple) => (
-            <div
-              className="col-lg-4 col-md-6 mb-4"
-              key={temple._id}
-            >
-              <TempleCard temple={temple} />
+          {filteredTemples.length > 0 ? (
+            filteredTemples.map((temple) => (
+              <div
+                className="col-lg-4 col-md-6 mb-4"
+                key={temple._id}
+              >
+                <TempleCard temple={temple} />
+              </div>
+            ))
+          ) : (
+            <div className="text-center">
+              <h4>No temples found.</h4>
             </div>
-          ))}
-
+          )}
         </div>
-
       </section>
 
-      {/* Why Choose */}
-
       <section className="why-section">
-
         <div className="container">
-
           <h2 className="text-center mb-5">
             Why Choose DarshanEase?
           </h2>
@@ -121,17 +113,11 @@ function Home() {
             </div>
 
           </div>
-
         </div>
-
       </section>
 
-      {/* Statistics */}
-
       <section className="stats-section">
-
         <div className="container">
-
           <div className="row text-center">
 
             <div className="col-md-4">
@@ -150,9 +136,7 @@ function Home() {
             </div>
 
           </div>
-
         </div>
-
       </section>
     </>
   );

@@ -9,11 +9,10 @@ import authRoutes from "./routes/userRoutes.js";
 import templeRoutes from "./routes/templeRoutes.js";
 import bookingRoutes from "./routes/bookingRoutes.js";
 
-dns.setServers(["1.1.1.1", "8.8.8.8"]);
-
 dotenv.config();
 
-// Connect Database
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
+
 connectDB();
 
 const app = express();
@@ -22,17 +21,18 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Serve Images
+app.use("/images", express.static("images"));
+
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/temples", templeRoutes);
 app.use("/api/bookings", bookingRoutes);
 
-// Home Route
 app.get("/", (req, res) => {
   res.send("Server Running");
 });
 
-// Start Server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

@@ -7,50 +7,33 @@ function TempleCard({ temple }) {
 
       <div className="image-container">
         <img
-          src={
-            temple.image ||
-            "https://via.placeholder.com/500x300?text=Temple"
-          }
+          src={temple.image}
           alt={temple.name}
           className="temple-image"
+          onError={(e) => {
+            e.target.src = "/images/tirupati.jpg";
+          }}
         />
-
-        <div className="rating">
-          <FaStar /> 4.9
-        </div>
       </div>
 
       <div className="temple-content">
-
         <h3>{temple.name}</h3>
 
         <p>
-          <FaMapMarkerAlt className="icon" />
-          {temple.location}
+          <FaMapMarkerAlt /> {temple.location}
         </p>
 
         <p>
-          <FaClock className="icon" />
-          {temple.timings}
+          <FaClock /> {temple.timings}
         </p>
 
-        <div className="price-row">
+        <p>
+          <FaStar /> ₹{temple.ticketPrice}
+        </p>
 
-          <div>
-            <small>Starting From</small>
-
-            <h4>₹{temple.ticketPrice}</h4>
-          </div>
-
-          <Link
-            to={`/temple/${temple._id}`}
-            className="details-btn"
-          >
-            View Details
-          </Link>
-
-        </div>
-
+        <Link to={`/temple/${temple._id}`} className="btn">
+          View Details
+        </Link>
       </div>
 
     </div>

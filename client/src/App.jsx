@@ -3,16 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-<>
-  <Navbar />
-
-  <Routes>
-    <Route path="/admin" element={<AdminDashboard />} />
-  </Routes>
-
-  <Footer />
-</>
-
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -36,12 +26,11 @@ function App() {
         <Route path="/booking/:id" element={<Booking />} />
         <Route path="/my-bookings" element={<MyBookings />} />
         <Route path="/admin" element={<AdminDashboard />} />
-        <Route 
-path="/admin/bookings" 
-element={<AdminBookings />} 
-/>
+        <Route path="/admin/bookings" element={<AdminBookings />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+
+      <Footer />
     </>
   );
 }
