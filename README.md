@@ -1,16 +1,104 @@
-# React + Vite
+# DarshanEase - Temple Darshan Booking System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+DarshanEase is a full-stack web application that allows users to browse temples, book darshan tickets, select time slots, and manage their bookings. It also provides an admin dashboard for managing temple information.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### User
+- User Registration & Login
+- Browse Temples
+- View Temple Details
+- Book Darshan Tickets
+- View My Bookings
 
-## React Compiler
+### Admin
+- Add New Temples
+- Update Temple Details
+- Delete Temples
+- Manage Temple Information
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+### Frontend
+- React.js
+- Vite
+- React Router
+- Axios
+- CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend
+- Node.js
+- Express.js
+
+### Database
+- MongoDB Atlas
+- Mongoose
+
+### Authentication
+- JWT (JSON Web Token)
+
+## Project Structure
+
+```
+DarshanEase/
+│
+├── client/
+├── Server/
+├── Project Documentation/
+├── Phase Wise Templates/
+├── postman/
+├── README.md
+```
+
+## Installation
+
+### Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+### Backend
+
+```bash
+cd Server
+npm install
+npm start
+```
+
+### Frontend
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+## Environment Variables
+
+Create a `.env` file inside the Server folder.
+
+```
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+
+## Screenshots
+
+(Add project screenshots here if required.)
+
+## Demo Videos
+
+- FrontendDemo.mp4
+- BackendDemo.mp4
+- DemoVideo.mp4
+
+## Author
+
+Mounika Sai
+
+## License
+
+This project is developed for academic purposes.
